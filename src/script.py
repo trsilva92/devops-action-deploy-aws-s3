@@ -34,7 +34,6 @@ def create_bucket(bucket_name, s3_client, region):
     except Exception as e:
         print(f"Erro ao criar o bucket s3: {e}")
 
-
 def add_permission(lambda_function, bucket_name, lambda_client):
     try:
         # gera StatementId dinâmico
@@ -73,9 +72,9 @@ def put_bucket_notification_configuration_lambda(bucket_name, lambda_function, f
             Bucket=bucket_name,
             NotificationConfiguration=notification_configuration
         )
-        print(f'Gatilho do s3 adicionado a função Lambda {lambda_function} com sucesso.')
+        print(f'Gatilho do bucket s3 adicionado com sucesso na lambda {lambda_function}')
     except Exception as e:
-        print(f"Erro ao criar gatilho do bucket na lambda: {e}")
+        print(f"Erro ao criar gatilho do bucket s3 na lambda: {e}")
 
 if __name__ == "__main__":
     main()
