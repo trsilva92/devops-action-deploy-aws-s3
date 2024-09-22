@@ -3,8 +3,8 @@ import sys
 import uuid
 
 # Inicializando os clients
-s3_client = boto3.client('s3', region_name='us-east-1')
-lambda_client = boto3.client("lambda", region_name='us-east-1')
+s3_client = boto3.client('s3')
+lambda_client = boto3.client("lambda")
 
 def main():
     bucket_name = sys.argv[1]
