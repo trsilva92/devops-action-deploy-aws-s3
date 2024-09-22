@@ -1,0 +1,38 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+
+# Distribuição de pacotes
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+
+# Arquivos de log
+*.log
+
+# Configurações de ambiente
+.env
+.env.*
+
+# Testes
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Outros
+*.DS_Store
+Thumbs.db

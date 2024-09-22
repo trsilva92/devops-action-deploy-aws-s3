@@ -1,0 +1,29 @@
+inputs:
+  bucket_name:
+    description: 'Nome do bucket S3'
+    required: true
+  
+  lambda_function:
+    description: 'Nome da função Lambda'
+    required: true
+  
+  folder:
+    description: 'Pasta onde ficarão os arquivos que serão o gatilho'
+    required: false
+  
+  format_file:
+    description: 'Extensão do arquivo que será o gatilho'
+    required: false
+
+  region:
+    description: 'Região onde será criado o bucket S3' Se o parâmetro vier vazio será criado na região default(us-east-1)
+    required: false
+    
+runs:
+  using: 'python'
+  steps:
+    - name: Create S3 Bucket and Lambda Trigger
+      run: |
+        python src/script.py ${{ inputs.bucket_name }} ${{ inputs.lambda_function }} ${{ inputs.folder }} ${{ inputs.format_file }} ${{ inputs.region }}
+
+# python .\src\script.py "teste-trigger-s3" "lambda-trigger-s3" "uploads" ".json" "us-east-1"
